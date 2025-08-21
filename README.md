@@ -47,3 +47,34 @@ Backend Django REST Framework (DRF) aur PostgreSQL pe bana hai aur JWT authentic
 ```bash
 git clone <your-repo-url>
 cd healthcare
+
+2. Create virtual environment
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+
+3. Install dependencies
+pip install -r requirements.txt
+
+4. Configure .env file
+
+Create .env in root directory:
+
+SECRET_KEY=your_secret_key
+DEBUG=True
+
+DB_NAME=healthcare_db
+DB_USER=postgres
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=5432
+
+5. Run migrations
+python manage.py makemigrations
+python manage.py migrate
+
+6. Start server
+python manage.py runserver
+
+
+Server will run on: http://127.0.0.1:8000/
